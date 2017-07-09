@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.radcliffe.utilities</groupId>
+  <artifactId>RadcliffeTools</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20161001033503</lastUpdated>
+  </versioning>
+</metadata>
