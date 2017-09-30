@@ -54,13 +54,14 @@ private Font font = new Font("Arial", Font.BOLD, 32);
 
 	/**
 	 *  Sets the Foreground color
-	 * @deprecated. This was mean to set shadow color. Use setShadowColor(color) instead.
+	 * @deprecated. This was mean to set shadow cffolor. Use setShadowColor(color) instead.
 	 * @param color. Color for the Foreground text
 	 * @return void.
 	 */
 	public void setTextForeGroundColor(Color color){
 		
 		this.foreGroundColor=color;
+		this.repaint();
 	}
 	/**
 	 *  Sets the set Text Background color
