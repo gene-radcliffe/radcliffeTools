@@ -1,3 +1,12 @@
+/**
+ *	Banner Class
+ *
+ * 	@author Gene Radcliffe
+ * 
+ * 
+ * <p>
+ * 
+ */
 package com.radcliffe.Forms;
 import java.awt.Graphics;
 import java.io.*;
@@ -14,18 +23,40 @@ private String title = "";
 private String title2 = "";
 private Color bkColor;
 private Color foreGroundColor;
-private Color txtBkColor;
-private Color txtForeGroundColor;
+private Color txtBkColor= new Color(50,50,50);
+private Color txtForeGroundColor= new Color(255,255,255);
 private boolean cShadow=true;
 private int x, y;
 private int x2, y2;
-private Font font = new Font("Arial", Font.BOLD, 32);
+private String fontName = "Arial";
+private int fontStyle = Font.BOLD;
+private int fontSize = 32;
+private Font font = new Font(fontName, fontStyle, fontSize);
 
 
-	public Banner(){
+	private Banner(){
 		this.txtForeGroundColor= new Color(255,255,255);
 		this.txtBkColor= new Color(50,50,50);
 	}
+	/**
+	 * Constructor. 
+	 * 
+	 * @param fontName - Name of the font
+	 * @param fontStyle - Style of the font
+	 * @param size - Font size
+	 * @param textColor - Color of the Text
+	 * @param shadow - Shadow Color
+	 */
+	public Banner(String fontName, int fontStyle, int size, Color textColor, Color shadow){
+		this.txtForeGroundColor= textColor;
+		this.txtBkColor= shadow;
+	}
+	/**
+	 * 
+	 * @param fontName - Name of the Font
+	 * @param fontStyle - Style of the font
+	 * @param size  - Font size
+	 */
 	public Banner(String fontName, int fontStyle, int size){
 		this();
 		font= new Font(fontName, fontStyle, size);	
@@ -50,8 +81,35 @@ private Font font = new Font("Arial", Font.BOLD, 32);
 		font = new Font(fontName, fontStyle, size);
 	}
 	
-	
-
+	/**
+	 * Sets a new font type, and repaints
+	 * @param name - Name of the font type
+	 */
+	public void setFont(String name){
+		fontName = name;
+		font = new Font(fontName, fontStyle,fontSize);
+		
+		repaint();
+	}
+	/**
+	 * Sets a new font style, and repaints
+	 * @param style - Style of font [int]
+	 */
+	public void setFontStyle(int style){
+		fontStyle = style;
+		font = new Font(fontName, fontStyle,fontSize);
+		repaint();
+	}
+	/**
+	 * Sets a new font size, and repaints
+	 * 
+	 * @param size - new size of font
+	 */
+	public void setFontSize(int size){
+		fontSize = size;
+		font = new Font(fontName, fontStyle, fontSize);
+		repaint();
+	}
 	/**
 	 *  Sets the Foreground color
 	 * @deprecated. This was mean to set shadow cffolor. Use setShadowColor(color) instead.
@@ -60,7 +118,7 @@ private Font font = new Font("Arial", Font.BOLD, 32);
 	 */
 	public void setTextForeGroundColor(Color color){
 		
-		this.foreGroundColor=color;
+		this.txtForeGroundColor=color;
 		this.repaint();
 	}
 	/**
